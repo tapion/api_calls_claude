@@ -1,17 +1,51 @@
 [
   {
-    "task": "Write a Python function that takes an AWS S3 bucket name and returns True if it follows AWS naming conventions (lowercase, 3-63 characters, no consecutive hyphens)",
-    "format": "python",
-    "solution_criteria": "Function should validate bucket names according to AWS S3 naming rules, returning a boolean. Should reject names with uppercase letters, consecutive hyphens, or length outside 3-63 characters."
+    "prompt_inputs": {
+      "content": "The concept of cultural identity has long been central to sociological inquiry, yet its definition remains contested among scholars. Identity formation occurs through complex processes of social interaction, wherein individuals negotiate their sense of self within broader institutional frameworks and power structures. Postcolonial theorists argue that identity is not a fixed essence but rather a fluid construct shaped by historical trauma, linguistic practices, and the legacies of imperialism. Furthermore, the rise of digital communication has fundamentally altered how communities maintain cultural boundaries and transmit intergenerational knowledge, challenging traditional anthropological understandings of cultural continuity and authenticity in the contemporary world."
+    },
+    "solution_criteria": [
+      "Extracts all major conceptual topics discussed in the passage as distinct array elements",
+      "Handles abstract social science terminology accurately without oversimplification",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage from a humanities/social sciences article containing abstract and conceptual topics to ensure non-technical language is handled effectively"
   },
   {
-    "task": "Create a JSON configuration object for an AWS Lambda function that specifies the function name, runtime (Python 3.11), memory (256 MB), timeout (30 seconds), and an environment variable for a database connection string",
-    "format": "json",
-    "solution_criteria": "Valid JSON object containing all required Lambda configuration properties including FunctionName, Runtime, MemorySize, Timeout, and Environment variables with proper structure and data types."
+    "prompt_inputs": {
+      "content": "This study examines the intersection of machine learning and natural language processing in biomedical text mining. We employ deep learning architectures, specifically transformer-based neural networks, to extract named entities from clinical documents. Our approach integrates natural language processing techniques with machine learning algorithms to improve entity recognition accuracy. The biomedical domain presents unique challenges for deep learning models due to domain-specific terminology and nested entity relationships. We benchmark our transformer architecture against traditional machine learning classifiers, demonstrating how neural network performance exceeds conventional approaches in processing biomedical text and identifying overlapping medical concepts within clinical narratives."
+    },
+    "solution_criteria": [
+      "Identifies all distinct topics without duplication (e.g., 'machine learning', 'natural language processing', 'deep learning', 'named entity recognition', 'biomedical text mining', 'transformer neural networks', 'clinical documents')",
+      "Avoids treating overlapping or nested concepts as separate topics (e.g., 'deep learning' and 'neural networks' should not both appear as separate topics if referring to the same concept)",
+      "Returns output as a JSON array of strings"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing overlapping and nested topics to verify the prompt correctly identifies distinct concepts without duplication"
   },
   {
-    "task": "Write a regex pattern that matches valid AWS IAM role ARNs in the format: arn:aws:iam::[account-id]:role/[role-name]",
-    "format": "regex",
-    "solution_criteria": "Regex pattern should match valid ARNs with 12-digit account IDs and alphanumeric role names containing hyphens and underscores, while rejecting invalid formats or missing components."
+    "prompt_inputs": {
+      "content": "Recent advances in CRISPR-Cas9 gene editing have demonstrated significant improvements in off-target mitigation through the implementation of high-fidelity SpCas9 variants, particularly eSpCas9 and SpCas9-HF1, which reduce unintended DNA cleavage by up to 90% compared to wild-type Cas9. Additionally, the development of base editing systems, including cytosine base editors (CBEs) and adenine base editors (ABEs), has enabled precise point mutations without generating double-strand breaks. These innovations have facilitated therapeutic applications in hemophilia A treatment and sickle cell disease, where ex vivo editing of patient-derived hematopoietic stem cells (HSCs) combined with lentiviral vector integration has shown promising results in Phase I/II clinical trials. Furthermore, multiplexed CRISPR approaches utilizing dual sgRNA scaffolds have improved the efficiency of large chromosomal deletions for cancer immunotherapy, while emerging in vivo delivery mechanisms employing lipid nanoparticles (LNPs) and adeno-associated viruses (AAVs) continue to expand therapeutic possibilities."
+    },
+    "solution_criteria": [
+      "Extracts all major technical topics including gene editing variants, base editing systems, and delivery mechanisms",
+      "Captures domain-specific acronyms and jargon (CRISPR-Cas9, SpCas9, CBEs, ABEs, HSCs, LNPs, AAVs) as topics or within topic labels",
+      "Identifies clinical/therapeutic applications as distinct topics",
+      "Returns output as a valid JSON array of strings"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a highly technical passage containing domain-specific jargon and acronyms to verify accurate topic extraction in specialized fields"
+  },
+  {
+    "prompt_inputs": {
+      "content": "Recent studies examining patient outcomes in tertiary care facilities have revealed concerning disparities in treatment efficacy across demographic groups. While the mechanisms remain incompletely understood, longitudinal data suggests that socioeconomic factors, healthcare access patterns, and institutional resource allocation play significant roles in determining clinical trajectories. The statistical models employed in this analysis controlled for comorbidities and medication adherence, yet residual variance persists, indicating potential unmeasured confounders related to systemic inequities. These findings underscore the necessity for integrated approaches addressing both biomedical interventions and structural determinants of health."
+    },
+    "solution_criteria": [
+      "Identifies implicit topics requiring contextual inference (e.g., health disparities, structural inequality, socioeconomic factors) not explicitly named in single phrases",
+      "Captures underlying themes such as healthcare equity, epidemiological methodology, and systems-level analysis",
+      "Returns results as a JSON array of strings"
+    ],
+    "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+    "scenario": "Testing with a passage containing implicit topics that require inference from context rather than explicit statement to assess the prompt's ability to recognize underlying themes"
   }
 ]

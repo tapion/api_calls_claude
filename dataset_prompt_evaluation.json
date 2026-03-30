@@ -1,0 +1,17 @@
+[
+  {
+    "task": "Write a Python function that takes an AWS S3 bucket name and returns True if it follows AWS naming conventions (lowercase, 3-63 characters, no consecutive hyphens)",
+    "format": "python",
+    "solution_criteria": "Function should validate bucket names according to AWS S3 naming rules, returning a boolean. Should reject names with uppercase letters, consecutive hyphens, or length outside 3-63 characters."
+  },
+  {
+    "task": "Create a JSON configuration object for an AWS Lambda function that specifies the function name, runtime (Python 3.11), memory (256 MB), timeout (30 seconds), and an environment variable for a database connection string",
+    "format": "json",
+    "solution_criteria": "Valid JSON object containing all required Lambda configuration properties including FunctionName, Runtime, MemorySize, Timeout, and Environment variables with proper structure and data types."
+  },
+  {
+    "task": "Write a regex pattern that matches valid AWS IAM role ARNs in the format: arn:aws:iam::[account-id]:role/[role-name]",
+    "format": "regex",
+    "solution_criteria": "Regex pattern should match valid ARNs with 12-digit account IDs and alphanumeric role names containing hyphens and underscores, while rejecting invalid formats or missing components."
+  }
+]

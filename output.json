@@ -1,0 +1,71 @@
+[
+  {
+    "output": "```json\n[\n  \"cultural identity\",\n  \"identity formation\",\n  \"social interaction\",\n  \"institutional frameworks\",\n  \"power structures\",\n  \"postcolonial theory\",\n  \"historical trauma\",\n  \"linguistic practices\",\n  \"imperialism\",\n  \"digital communication\",\n  \"cultural boundaries\",\n  \"intergenerational knowledge transmission\",\n  \"cultural continuity\",\n  \"cultural authenticity\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "The concept of cultural identity has long been central to sociological inquiry, yet its definition remains contested among scholars. Identity formation occurs through complex processes of social interaction, wherein individuals negotiate their sense of self within broader institutional frameworks and power structures. Postcolonial theorists argue that identity is not a fixed essence but rather a fluid construct shaped by historical trauma, linguistic practices, and the legacies of imperialism. Furthermore, the rise of digital communication has fundamentally altered how communities maintain cultural boundaries and transmit intergenerational knowledge, challenging traditional anthropological understandings of cultural continuity and authenticity in the contemporary world."
+      },
+      "solution_criteria": [
+        "Extracts all major conceptual topics discussed in the passage as distinct array elements",
+        "Handles abstract social science terminology accurately without oversimplification",
+        "Returns output as a valid JSON array of strings"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage from a humanities/social sciences article containing abstract and conceptual topics to ensure non-technical language is handled effectively"
+    },
+    "score": 10,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It meets the secondary criteria by extracting all major conceptual topics discussed (cultural identity, postcolonial theory, digital communication, cultural authenticity, etc.) and handling abstract terminology appropriately. The extraction is thorough and well-balanced, capturing both explicit topics and nuanced concepts. Minor considerations about potential gaps do not constitute deficiencies given the comprehensive nature of the extraction."
+  },
+  {
+    "output": "```json\n[\n  \"machine learning\",\n  \"natural language processing\",\n  \"biomedical text mining\",\n  \"deep learning\",\n  \"transformer-based neural networks\",\n  \"named entity recognition\",\n  \"clinical documents\",\n  \"entity extraction\",\n  \"neural networks\",\n  \"traditional machine learning classifiers\",\n  \"biomedical domain\",\n  \"domain-specific terminology\",\n  \"nested entity relationships\",\n  \"medical concept identification\",\n  \"clinical narratives\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "This study examines the intersection of machine learning and natural language processing in biomedical text mining. We employ deep learning architectures, specifically transformer-based neural networks, to extract named entities from clinical documents. Our approach integrates natural language processing techniques with machine learning algorithms to improve entity recognition accuracy. The biomedical domain presents unique challenges for deep learning models due to domain-specific terminology and nested entity relationships. We benchmark our transformer architecture against traditional machine learning classifiers, demonstrating how neural network performance exceeds conventional approaches in processing biomedical text and identifying overlapping medical concepts within clinical narratives."
+      },
+      "solution_criteria": [
+        "Identifies all distinct topics without duplication (e.g., 'machine learning', 'natural language processing', 'deep learning', 'named entity recognition', 'biomedical text mining', 'transformer neural networks', 'clinical documents')",
+        "Avoids treating overlapping or nested concepts as separate topics (e.g., 'deep learning' and 'neural networks' should not both appear as separate topics if referring to the same concept)",
+        "Returns output as a JSON array of strings"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage containing overlapping and nested topics to verify the prompt correctly identifies distinct concepts without duplication"
+    },
+    "score": 6,
+    "reasoning": "The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. However, it violates the secondary criteria regarding overlapping/nested concepts. The criteria explicitly state that 'deep learning' and 'neural networks' should not both appear as separate topics if referring to the same concept, yet both are included. Similarly, 'named entity recognition' and 'entity extraction' are synonymous concepts that should be consolidated. Additionally, 'traditional machine learning classifiers' is more of a comparative benchmark than a primary topic being studied. These violations of the secondary criteria prevent a higher score despite meeting mandatory requirements."
+  },
+  {
+    "output": "```json\n[\n  \"CRISPR-Cas9 gene editing\",\n  \"off-target mitigation\",\n  \"high-fidelity SpCas9 variants\",\n  \"eSpCas9\",\n  \"SpCas9-HF1\",\n  \"DNA cleavage reduction\",\n  \"base editing systems\",\n  \"cytosine base editors (CBEs)\",\n  \"adenine base editors (ABEs)\",\n  \"point mutations\",\n  \"double-strand breaks\",\n  \"hemophilia A treatment\",\n  \"sickle cell disease\",\n  \"hematopoietic stem cells (HSCs)\",\n  \"ex vivo gene editing\",\n  \"lentiviral vector integration\",\n  \"clinical trials\",\n  \"multiplexed CRISPR approaches\",\n  \"dual sgRNA scaffolds\",\n  \"chromosomal deletions\",\n  \"cancer immunotherapy\",\n  \"in vivo delivery mechanisms\",\n  \"lipid nanoparticles (LNPs)\",\n  \"adeno-associated viruses (AAVs)\",\n  \"therapeutic gene delivery\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent advances in CRISPR-Cas9 gene editing have demonstrated significant improvements in off-target mitigation through the implementation of high-fidelity SpCas9 variants, particularly eSpCas9 and SpCas9-HF1, which reduce unintended DNA cleavage by up to 90% compared to wild-type Cas9. Additionally, the development of base editing systems, including cytosine base editors (CBEs) and adenine base editors (ABEs), has enabled precise point mutations without generating double-strand breaks. These innovations have facilitated therapeutic applications in hemophilia A treatment and sickle cell disease, where ex vivo editing of patient-derived hematopoietic stem cells (HSCs) combined with lentiviral vector integration has shown promising results in Phase I/II clinical trials. Furthermore, multiplexed CRISPR approaches utilizing dual sgRNA scaffolds have improved the efficiency of large chromosomal deletions for cancer immunotherapy, while emerging in vivo delivery mechanisms employing lipid nanoparticles (LNPs) and adeno-associated viruses (AAVs) continue to expand therapeutic possibilities."
+      },
+      "solution_criteria": [
+        "Extracts all major technical topics including gene editing variants, base editing systems, and delivery mechanisms",
+        "Captures domain-specific acronyms and jargon (CRISPR-Cas9, SpCas9, CBEs, ABEs, HSCs, LNPs, AAVs) as topics or within topic labels",
+        "Identifies clinical/therapeutic applications as distinct topics",
+        "Returns output as a valid JSON array of strings"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a highly technical passage containing domain-specific jargon and acronyms to verify accurate topic extraction in specialized fields"
+    },
+    "score": 9,
+    "reasoning": "The solution fully satisfies all mandatory requirements: it is a valid JSON array of strings containing topics from the article with no extra commentary. It meets all secondary criteria by extracting major technical topics, capturing domain-specific acronyms and jargon (CRISPR-Cas9, SpCas9 variants, CBEs, ABEs, HSCs, LNPs, AAVs), and identifying clinical/therapeutic applications as distinct topics. The only minor issue is the inclusion of a couple of inferred topics ('DNA cleavage reduction' and 'therapeutic gene delivery') that are not explicitly stated in the source text, though these are reasonable interpretations. The extraction is thorough and well-organized."
+  },
+  {
+    "output": "```json\n[\n  \"patient outcomes\",\n  \"tertiary care facilities\",\n  \"treatment efficacy disparities\",\n  \"demographic disparities\",\n  \"socioeconomic factors\",\n  \"healthcare access\",\n  \"institutional resource allocation\",\n  \"clinical trajectories\",\n  \"longitudinal data\",\n  \"comorbidities\",\n  \"medication adherence\",\n  \"statistical modeling\",\n  \"unmeasured confounders\",\n  \"systemic inequities\",\n  \"structural determinants of health\",\n  \"biomedical interventions\",\n  \"health equity\"\n]\n```",
+    "test_case": {
+      "prompt_inputs": {
+        "content": "Recent studies examining patient outcomes in tertiary care facilities have revealed concerning disparities in treatment efficacy across demographic groups. While the mechanisms remain incompletely understood, longitudinal data suggests that socioeconomic factors, healthcare access patterns, and institutional resource allocation play significant roles in determining clinical trajectories. The statistical models employed in this analysis controlled for comorbidities and medication adherence, yet residual variance persists, indicating potential unmeasured confounders related to systemic inequities. These findings underscore the necessity for integrated approaches addressing both biomedical interventions and structural determinants of health."
+      },
+      "solution_criteria": [
+        "Identifies implicit topics requiring contextual inference (e.g., health disparities, structural inequality, socioeconomic factors) not explicitly named in single phrases",
+        "Captures underlying themes such as healthcare equity, epidemiological methodology, and systems-level analysis",
+        "Returns results as a JSON array of strings"
+      ],
+      "task_description": "Extract topics out of a passage of text from a scholarly article into a JSON array of strings",
+      "scenario": "Testing with a passage containing implicit topics that require inference from context rather than explicit statement to assess the prompt's ability to recognize underlying themes"
+    },
+    "score": 9,
+    "reasoning": "The solution meets all mandatory requirements: it is a valid JSON array of strings containing topics from the passage with no extra commentary. It successfully identifies both explicit topics mentioned in the text and implicit themes requiring contextual inference (systemic inequities, structural determinants of health, epidemiological methodology). The inclusion of 'health equity' as an inferred overarching theme is a minor interpretive stretch, as the passage discusses equity issues without explicitly naming 'health equity' as a topic. However, this represents a reasonable inference given the context. The extraction is comprehensive and demonstrates strong understanding of the passage's thematic content."
+  }
+]
